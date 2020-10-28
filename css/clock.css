@@ -97,12 +97,12 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: url(../pexels-felix-mittermeier-956981.jpg) no-repeat center
-    center fixed;
+  background: url(../space.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: rgb(0, 0, 71);
   color: #ffffff;
   font-family: "Orbitron";
 }
