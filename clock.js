@@ -3,35 +3,28 @@ isMilitary = false; //sets the 24 hour time to false
 window.onload = getTime(); //runs function on page load
 
 function getTime() {
-  setInterval(function () {
-    const currentDate = new Date(); //establishes current date/time
+  const currentDate = new Date(); //establishes current date/time
 
-    //checks to see if user wants to show in military time or not
-    if (isMilitary === true) {
-      document.getElementById(
-        "clockDate"
-      ).innerHTML = currentDate.toDateString();
-      document.getElementById(
-        "clockTime"
-      ).innerHTML = currentDate.toLocaleTimeString("en-GB");
-    } else {
-      document.getElementById(
-        "clockDate"
-      ).innerHTML = currentDate.toDateString();
-      document.getElementById(
-        "clockTime"
-      ).innerHTML = currentDate.toLocaleTimeString("en-US");
-    }
-  }, 1000);
+  // sets the variables for the DOM
+  const clockDate = document.getElementById("clockDate");
+  const clockTime = document.getElementById("clockTime");
+
+  // sets the variables to be used in the DOM
+  const twentyFourHrTime = currentDate.toLocaleTimeString("en-GB");
+  const twelveHrTime = currentDate.toLocaleTimeString("en-US");
+  const date = currentDate.toDateString();
+  const time = isMilitary ? (clockTime.textContent = twentyFourHrTime) : (clockTime.textContent = twelveHrTime);
+
+  clockDate.textContent = date;
+  clockTime.textContent = time;
 }
 
-//this is the event listener to watch for time toggle request
-document.getElementById("timeToggle").addEventListener("click", function () {
-  if (isMilitary === false) {
-    isMilitary = true;
-    getTime();
-  } else {
-    isMilitary = false;
-    getTime();
-  }
+// this is the event listener to watch for time toggle request
+// just toggles isMilitary from true-false or false-true
+const timeToggle = document.getElementById("timeToggle")
+timeToggle.addEventListener("click", function () {
+  isMilitary = !isMilitary;
 });
+
+getTime(); // calls function on page load so there is no delay
+setInterval(getTime, 1000); // calls getTime to update clock every second
