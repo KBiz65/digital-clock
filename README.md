@@ -1,1 +1,1 @@
-# digital-clock
+# Kevin's Digital Clock App
