@@ -17,8 +17,6 @@ function getTime() {
   clockTime.textContent = time;
 }
 
-// this is the event listener to watch for time toggle request
-// just toggles isMilitary from true-false or false-true
 const timeToggle = document.getElementById("timeToggle")
 timeToggle.addEventListener("click", function () {
   isMilitary = !isMilitary;
