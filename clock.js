@@ -5,11 +5,9 @@ window.onload = getTime(); //runs function on page load
 function getTime() {
   const currentDate = new Date(); //establishes current date/time
 
-  // sets the variables for the DOM
   const clockDate = document.getElementById("clockDate");
   const clockTime = document.getElementById("clockTime");
-
-  // sets the variables to be used in the DOM
+  
   const twentyFourHrTime = currentDate.toLocaleTimeString("en-GB");
   const twelveHrTime = currentDate.toLocaleTimeString("en-US");
   const date = currentDate.toDateString();
