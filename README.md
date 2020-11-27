@@ -7,7 +7,7 @@ _A simple space themed digital clock with 12/24 hour display options_
 
 <br>
 
-Play in [here](https://kbiz65.github.io/digital-clock/)
+Check it out [here](https://kbiz65.github.io/digital-clock/)
 
 <br>
 
